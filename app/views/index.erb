@@ -1,23 +1,19 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>Welcome to Bitly Jr!!</h1>
+  <p>Enter the url you would like to shorten</p>
+  
+   <form class="cf" action="/urls" method="post">
+    <div class ="row">
+      <label for="input_box">Your Url</label>
+      <input id="input_box" type="text" name="long" placeholder="">
+    </div>
+    <div class ="row">
+      <input id="submit_button" type="Submit">
+    </div>
+  </form>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <div>
+    <%=@error%>
+  </div>
+  
 </div>
